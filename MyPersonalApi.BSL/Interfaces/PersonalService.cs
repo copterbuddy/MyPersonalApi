@@ -45,16 +45,15 @@ namespace MyPersonalApi.BSL.Interfaces
             PersonalListModel resultList = new PersonalListModel();
             resultList.personalListModels = new List<PersonalModel>();
 
-            PersonalModel result = new PersonalModel();
+            List<PersonalModel> tempList = new List<PersonalModel>();
             var dynamicParameter = new DynamicParameters();
 
             try
             {
-
                 string sql = "SELECT * FROM \"PersonalSchemas\".\"CustomerInfoTable\" ORDER BY \"Id\" ASC";
-                var value = baseRepository.Query<PersonalModel>(sql,dynamicParameter).ToList();
-                resultList.personalListModels = value;
+                var value = baseRepository.Query<PersonalModel>(sql).ToList();
 
+                resultList.personalListModels = value;
                 resultList.ErrorCode = "0000";
                 resultList.ErrorMessage = "Success";
 

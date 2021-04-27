@@ -54,15 +54,15 @@ namespace MyPersonalApi.Service.Controllers
             {
                 var data = personalService.GetInfoList();
 
+                resultList.ErrorCode = data.ErrorCode;
+                resultList.ErrorMessage = data.ErrorMessage;
+
                 resultList.personalListDetail = data.personalListModels.Select(s => new PersonalDetail()
                 {
                     Id = s.Id,
                     CizId = s.CizId,
                     CizName = s.CizName,
                 }).ToList();
-
-                resultList.ErrorCode = data.ErrorCode;
-                resultList.ErrorMessage = data.ErrorMessage;
 
             }
             catch (Exception ex)

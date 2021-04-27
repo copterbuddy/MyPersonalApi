@@ -5,6 +5,7 @@
     <AWSProjectType>Lambda</AWSProjectType>
     <!-- This property makes the build directory similar to a publish directory and helps the AWS .NET Lambda Mock Test Tool find project dependencies. -->
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <UserSecretsId>3817569a-929e-40c1-ba30-339f6c962512</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Amazon.Lambda.AspNetCoreServer" Version="5.3.0" />
