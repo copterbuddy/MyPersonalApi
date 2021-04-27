@@ -76,5 +76,30 @@ namespace MyPersonalApi.Service.Controllers
 
         }
 
+        [HttpPost("MyInfo")]
+        public IActionResult Post()
+        {
+
+            PersonalDetail result = new PersonalDetail();
+            try
+            {
+                var data = personalService.GetInfo();
+                result.CizId = data.CizId;
+                result.CizName = data.CizName;
+                result.ErrorCode = "0000";
+                result.ErrorMessage = "Success";
+
+            }
+            catch (Exception ex)
+            {
+                result.ErrorCode = "9999";
+                result.ErrorMessage = $"MyInfo Controller error :{ex}";
+            }
+
+            var myJson = JsonConvert.SerializeObject(result);
+            return Ok(myJson);
+
+        }
+
     }
 }
