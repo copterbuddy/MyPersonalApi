@@ -77,9 +77,9 @@ namespace MyPersonalApi.Service.Controllers
         }
 
         [HttpPost("MyInfo")]
-        public IActionResult Post()
+        public IActionResult Post([FromBody]Body value)
         {
-
+            //var myTest = Name;
             PersonalDetail result = new PersonalDetail();
             try
             {
@@ -99,6 +99,11 @@ namespace MyPersonalApi.Service.Controllers
             var myJson = JsonConvert.SerializeObject(result);
             return Ok(myJson);
 
+        }
+
+        public class Body
+        {
+            public string Name { get; set; }
         }
 
     }
