@@ -9,36 +9,23 @@ namespace MyPersonalApi.Service.Controllers
     [Route("api/[controller]")]
     public class ValuesController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+        //[Route("api/[controller]")]
+        public class PersonalController : Controller
         {
-            return new string[] { "value1", "value2" };
-        }
+            //private readonly IPersonalService personalService;
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+            //public PersonalController(IPersonalService personalService)
+            //{
+            //    this.personalService = personalService;
+            //}
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
+            [HttpGet("TestGithubAction")]
+            public IActionResult TestGithubAction()
+            {
+                return Ok("TestGithubAction Successful");
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+            }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }
