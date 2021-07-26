@@ -16,11 +16,11 @@ namespace MyPersonalApi.Service.Controllers
         //    this.personalService = personalService;
         //}
 
-        [HttpGet("TestGithubAction")]
-        public IActionResult TestGithubAction()
-        {
-            return Ok("TestGithubAction Successful");
+        //[HttpGet("TestGithubAction")]
+        //public IActionResult TestGithubAction()
+        //{
+        //    return Ok("TestGithubAction Successful");
 
-        }
+        //}
     }
 }
