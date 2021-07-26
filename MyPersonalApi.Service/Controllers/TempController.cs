@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace MyPersonalApi.Service.Controllers
 {
+    //[Route("api/[controller]")]
     public class TempController : Controller
     {
-        public IActionResult Index()
+        [HttpGet("TestGithubAction")]
+        public IActionResult TestGithubAction()
         {
-            return View();
+            return Ok("TestGithubAction Successful");
+
         }
     }
 }

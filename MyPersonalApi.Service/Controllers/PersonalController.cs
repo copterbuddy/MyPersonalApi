@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MyPersonalApi.Service.Controllers
 {
-    [Route("api/[controller]")]
+    //[Route("api/[controller]")]
     public class PersonalController : Controller
     {
         private readonly IPersonalService personalService;

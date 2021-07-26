@@ -6,25 +6,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MyPersonalApi.Service.Controllers
 {
-    [Route("api/[controller]")]
+    //[Route("api/[controller]")]
     public class ValuesController : ControllerBase
     {
-        //[Route("api/[controller]")]
-        public class PersonalController : Controller
+        //private readonly IPersonalService personalService;
+
+        //public PersonalController(IPersonalService personalService)
+        //{
+        //    this.personalService = personalService;
+        //}
+
+        [HttpGet("TestGithubAction")]
+        public IActionResult TestGithubAction()
         {
-            //private readonly IPersonalService personalService;
-
-            //public PersonalController(IPersonalService personalService)
-            //{
-            //    this.personalService = personalService;
-            //}
-
-            [HttpGet("TestGithubAction")]
-            public IActionResult TestGithubAction()
-            {
-                return Ok("TestGithubAction Successful");
-
-            }
+            return Ok("TestGithubAction Successful");
 
         }
     }
