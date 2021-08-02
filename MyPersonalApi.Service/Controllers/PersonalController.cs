@@ -29,6 +29,8 @@ namespace MyPersonalApi.Service.Controllers
                 var data = personalService.GetInfo();
                 result.CizId = data.CizId;
                 result.CizName = data.CizName;
+                result.ErrorCode = "0000";
+                result.ErrorMessage = "Success";
 
             }
             catch (Exception ex)

@@ -15,11 +15,6 @@ namespace MyPersonalApi.BSL.Interfaces
     {
         public readonly IBaseRepository baseRepository;
 
-        public PersonalService()
-        {
-            this.baseRepository = baseRepository;
-        }
-
         public PersonalService(IBaseRepository baseRepository)
         {
             this.baseRepository = baseRepository;
@@ -33,10 +28,7 @@ namespace MyPersonalApi.BSL.Interfaces
 
                 string sql = "SELECT * FROM \"PersonalSchemas\".\"CustomerInfoTable\" ORDER BY \"Id\" ASC";
                 var value = baseRepository.Query<PersonalModel>(sql).FirstOrDefault();
-
                 result = value;
-                result.ErrorCode = "0000";
-                result.ErrorMessage = "Success";
 
             }
             catch(Exception ex)
